@@ -1,6 +1,6 @@
 
 export interface UserSettings{
-    name:string,
+    name:any,
     emailOffers:boolean,
     interfaceStyle:string,
     subscriptionType:string
