@@ -23,5 +23,7 @@ export class UserSettingsFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(form:NgForm){
+    console.log('in onSubmit',form.valid)
+  }
 }
