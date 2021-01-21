@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{NgForm, NgModel} from '@angular/forms'
+import { Observable } from 'rxjs';
 import { UserSettingsService } from '../user-settings/user-settings.service';
 import { UserSettings } from './user-settings';
 
@@ -18,12 +19,13 @@ export class UserSettingsFormComponent implements OnInit {
     notes:'here are sm notes'
 
   };
-  userSettings:UserSettings={...this.originalUserSettings}
-  subscriptionTypes=['one','two','three']
+  userSettings:UserSettings={...this.originalUserSettings};
+  subscriptionTypes:Observable<string[]>;
 
   constructor( private userSettingsService:UserSettingsService) { }
 
   ngOnInit(): void {
+    this.subscriptionTypes=this.userSettingsService.getSubscriptionTypes();
   }
   onBlur(field:NgModel){
     console.log('in onBlur',field.valid)

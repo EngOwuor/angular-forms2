@@ -9,6 +9,9 @@ import { UserSettings } from '../user-settings-form/user-settings';
 export class UserSettingsService {
 
   constructor(private http:HttpClient) { }
+  getSubscriptionTypes():Observable<string[]>{
+    return of(['monthly','annually','lifetime'])
+  }
 
   postUserSettingsForm(userSettings:UserSettings):Observable<any>{
     return this.http.post('https://putsreq.com/aqZEvODZr3dDEBSUEEUQ',userSettings)
