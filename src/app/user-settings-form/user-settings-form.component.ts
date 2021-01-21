@@ -19,6 +19,7 @@ export class UserSettingsFormComponent implements OnInit {
 
   };
   userSettings:UserSettings={...this.originalUserSettings}
+  subscriptionTypes=['one','two','three']
 
   constructor( private userSettingsService:UserSettingsService) { }
 

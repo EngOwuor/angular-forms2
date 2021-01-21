@@ -11,7 +11,7 @@ export class UserSettingsService {
   constructor(private http:HttpClient) { }
 
   postUserSettingsForm(userSettings:UserSettings):Observable<any>{
-    return this.http.post('',userSettings)
+    return this.http.post('https://putsreq.com/aqZEvODZr3dDEBSUEEUQ',userSettings)
     // of(userSettings)
 
   }
